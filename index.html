@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>IntelliQ - Create MCQ Papers</title>
+    <meta name="description" content="IntelliQ is a free AI-powered MCQ generator: create, edit, and export exam question papers with answer keys in English or Bangla. Generate MCQs from a topic or an uploaded file, randomize question sets, and download print-ready PDFs.">
+    <meta name="keywords" content="MCQ generator, AI question generator, exam paper maker, Bangla MCQ, question paper generator, BCS preliminary questions, quiz maker, PDF exam generator">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Rifatplex">
+    <link rel="canonical" href="https://intelliq.rifatplex.com/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="IntelliQ - AI MCQ Generator">
+    <meta property="og:description" content="Create, edit, and export exam question papers with AI — in English or Bangla. Generate MCQs from a topic or file, randomize sets, and download print-ready PDFs.">
+    <meta property="og:site_name" content="IntelliQ">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="bn_BD">
+    <meta property="og:url" content="https://intelliq.rifatplex.com/">
+    <!-- TODO: replace with a real hosted 1200x630 preview image once one
+         exists — data URIs are not accepted by social-preview crawlers
+         (Facebook/Twitter/LinkedIn fetch og:image over HTTP), so this is
+         intentionally left pointing at a real path rather than the inline
+         favicon. Until that file is uploaded, social shares will fall back
+         to no image, which is harmless and doesn't affect the Lighthouse
+         SEO score (og:image isn't a scored audit). -->
+    <meta property="og:image" content="https://intelliq.rifatplex.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="IntelliQ - AI MCQ Generator">
+    <meta name="twitter:description" content="Create, edit, and export exam question papers with AI — in English or Bangla. Generate MCQs from a topic or file, randomize sets, and download print-ready PDFs.">
+    <meta name="twitter:image" content="https://intelliq.rifatplex.com/og-image.png">
+
+    <meta name="theme-color" content="#146EF5">
+    <link rel="icon" type="image/png" href="data:image/png;base64,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">
+
+    <!-- Google Fonts -->
+    <!-- Weight 300 removed: the CSS below never applies font-weight:300
+         anywhere, so this trims ~20% off the font payload with zero visual
+         change. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Loaded non-blocking: the stylesheet is fetched at low priority via
+         rel=preload, then swapped to rel=stylesheet once ready. The <noscript>
+         fallback still renders fonts for the rare no-JS visitor. This removes
+         the font CSS from the critical render path (perf) while keeping the
+         same fonts on first meaningful paint almost all of the time, since
+         `display=swap` already avoids invisible text either way. -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+
+    <!-- Lucide Icons + DOMPurify: needed for the very first render (icons)
+         and for every keystroke while editing (sanitization), so they load
+         eagerly — but `defer` lets the browser keep parsing the HTML/CSS
+         below instead of blocking on the network fetch. -->
+    <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.js" defer>
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js" defer>
+    </script>
+
+    <!-- Firebase (Auth + Firestore) — loaded as native ES modules straight
+         from Google's CDN, no bundler needed. This runs BEFORE the app's
+         own scripts below and publishes a small window.FirebaseSync API
+         that the rest of the app (loaded as classic scripts) can call. -->
+    <script type="module" src="firebase-init.js"></script>
+
+    <!-- html2canvas / jsPDF / JSZip are only needed when the user actually
+         clicks Download — loading them on every page visit blocks initial
+         render for functionality most visits never use. They're now loaded
+         on demand by PdfGen.ensureLibsLoaded() the first time a download is
+         requested, and cached in the browser after that. -->
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ===== APP CONTAINER ===== -->
+    <div class="app-container">
+
+        <!-- ===== TOP NAVBAR ===== -->
+        <header class="app-header">
+            <div class="app-header__brand">
+                <button type="button" class="app-header__mark" id="btnDevInfo" aria-haspopup="dialog" aria-label="Developer info" title="Developer info">
+                    <img src="data:image/png;base64,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" alt="IntelliQ logo" width="40" height="40">
+                </button>
+                <div class="app-header__title">
+                    <h1>IntelliQ</h1>
+                    <p data-i18n="app.tagline">Made in Rifatplex</p>
+                </div>
+            </div>
+            <div class="app-header__actions">
+                <button type="button" class="theme-toggle" id="btnThemeToggle" aria-label="Toggle light or dark theme" title="Toggle theme">
+                    <i data-lucide="sun" class="theme-toggle__sun"></i>
+                    <i data-lucide="moon" class="theme-toggle__moon"></i>
+                </button>
+                <button type="button" class="theme-toggle" id="btnGoogleAuth" aria-label="Sign in with Google" title="Sign in with Google">
+                    <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true" id="googleAuthGlyph">
+                        <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12s5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24s8.955,20,20,20s20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/>
+                        <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/>
+                        <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/>
+                        <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/>
+                    </svg>
+                    <img id="googleAuthAvatar" alt="" hidden width="24" height="24" style="width:24px;height:24px;border-radius:50%;object-fit:cover;">
+                </button>
+                <button type="button" class="theme-toggle" id="btnHistory" aria-label="History" title="History">
+                    <i data-lucide="history"></i>
+                </button>
+                <button type="button" class="hamburger-btn" id="btnSettingsInput" aria-haspopup="true" aria-expanded="false" aria-label="Open settings" title="Settings">
+                    <span class="hamburger-btn__bars"><span></span><span></span><span></span></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Mobile tabs -->
+        <nav class="mobile-tabs" aria-label="Panel switcher">
+            <button type="button" class="mobile-tabs__btn is-active" data-tab="input">
+                <i data-lucide="edit-3"></i> <span data-i18n="tabs.input">Input</span>
+            </button>
+
+            <button type="button" class="mobile-tabs__btn" data-tab="preview">
+                <i data-lucide="eye"></i> <span data-i18n="tabs.preview">Preview</span>
+            </button>
+        </nav>
+
+        <!-- ===== MAIN LAYOUT ===== -->
+        <main class="app-shell">
+
+            <!-- ===== LEFT PANEL: INPUT ===== -->
+            <section class="panel panel--input" id="panelInput" aria-label="Question editor">
+                <div class="panel__scroll">
+
+                    <!-- Input panel top bar: single language switcher (drives
+                         both the document/preview content and the UI chrome).
+                         Settings now lives in the header hamburger, not here. -->
+                    <div class="panel-topbar">
+                        <div class="lang-switch" role="group" aria-label="Document language">
+                            <button type="button" class="lang-switch__btn is-active" data-lang="en">English</button>
+                            <button type="button" class="lang-switch__btn" data-lang="bn">বাংলা</button>
+                        </div>
+                        <div class="topbar-actions">
+                            <button type="button" class="btn btn--ai-mode" id="btnAiMode" aria-haspopup="dialog" aria-label="Open AI Mode to generate MCQs from a photo or PDF" title="AI Mode">
+                                <i data-lucide="sparkles"></i><span data-i18n="topbar.aiMode">AI Mode</span>
+                            </button>
+                        </div>
+                    </div>
+                    <input type="file" id="aiFileInput" accept="image/*,application/pdf,.pdf,.doc,.docx,.ppt,.pptx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.ms-powerpoint,application/vnd.openxmlformats-officedocument.presentationml.presentation" multiple class="sr-only" tabindex="-1" aria-hidden="true">
+                    <input type="file" id="aiCameraInput" accept="image/*" capture="environment" class="sr-only" tabindex="-1" aria-hidden="true">
+
+                    <!-- ===== HEADER CARD ===== -->
+                    <div class="header-card">
+
+                        <div class="folder-field">
+                            <label class="field-label" data-i18n="field.folder">Folder / Group</label>
+                            <button type="button" class="folder-select-btn" id="btnFolderSelect" aria-haspopup="true" aria-expanded="false">
+                                <i data-lucide="folder" class="folder-select-btn__icon"></i>
+                                <span class="folder-select-btn__label" id="folderSelectLabel" data-i18n="field.ungrouped">Ungrouped</span>
+                                <i data-lucide="chevron-down" class="folder-select-btn__chevron"></i>
+                            </button>
+                        </div>
+
+                        <div class="field-block">
+                            <label class="field-label" for="inpTitle" data-i18n="field.examTitle">Examination Title</label>
+                            <input type="text" id="inpTitle" class="field-input" placeholder="Enter examination title" data-ph-en="Enter examination title" data-ph-bn="পরীক্ষার শিরোনাম লিখুন" autocomplete="off">
+                        </div>
+
+                        <div class="field-block">
+                            <label class="field-label" for="inpSubtitle" data-i18n="field.subtitle">Subtitle / Institution</label>
+                            <input type="text" id="inpSubtitle" class="field-input" placeholder="Enter subtitle / institution name" data-ph-en="Enter subtitle / institution name" data-ph-bn="সাব-টাইটেল / প্রতিষ্ঠানের নাম লিখুন" autocomplete="off">
+                        </div>
+
+                        <div class="field-row">
+                            <div class="field-block">
+                                <label class="field-label" for="inpMarks" data-i18n="field.marks">Marks</label>
+                                <input type="text" id="inpMarks" class="field-input" placeholder="e.g. 50" data-ph-en="50" data-ph-bn="৫০" autocomplete="off">
+                            </div>
+                            <div class="field-block">
+                                <label class="field-label" for="inpTime" data-i18n="field.time">Time</label>
+                                <input type="text" id="inpTime" class="field-input" placeholder="e.g. 60 Minutes" data-ph-en="60 Minutes" data-ph-bn="৬০ মিনিট" autocomplete="off">
+                            </div>
+                        </div>
+
+                        <div class="field-block">
+                            <label class="field-label" for="inpNote" data-i18n="field.note">Note / Instructions</label>
+                            <textarea id="inpNote" class="field-input field-textarea" rows="2" placeholder="Enter instructions or note..." data-ph-en="Enter instructions or note..." data-ph-bn="নির্দেশনা বা নোট লিখুন..."></textarea>
+                        </div>
+
+                    </div>
+                    <!-- /header-card -->
+
+                    <div class="section-divider"></div>
+
+                    <!-- Questions -->
+                    <div class="questions-head">
+                        <h2 data-i18n="questions.heading">Add Questions</h2>
+                        <span class="questions-head__count" id="questionCount">1 question</span>
+                    </div>
+
+                    <div id="questionsList" class="questions-list"></div>
+
+                    <footer class="app-footer">©IntelliQ • Rifatplex • 2026</footer>
+
+                </div>
+            </section>
+
+            <!-- ===== RIGHT PANEL: PREVIEW ===== -->
+            <section class="panel panel--preview" id="panelPreview" aria-label="Live preview">
+
+                <div class="preview-toolbar">
+                    <div class="zoom-controls" role="group" aria-label="Zoom controls">
+                        <button type="button" class="icon-btn" id="btnZoomOut" aria-label="Zoom out"><i data-lucide="minus"></i></button>
+                        <button type="button" class="zoom-controls__value" id="zoomValue" aria-label="Reset zoom" title="Click to reset zoom">100%</button>
+                        <button type="button" class="icon-btn" id="btnZoomIn" aria-label="Zoom in"><i data-lucide="plus"></i></button>
+                    </div>
+
+                    <div class="preview-toolbar__right">
+                        <div class="set-switch" id="setSwitch" hidden>
+                            <label for="setPicker" class="sr-only">Preview set</label>
+                            <select id="setPicker" class="set-switch__select"></select>
+                        </div>
+                        <div class="topbar-actions">
+                            <div class="download-menu" id="downloadMenu">
+                                <button type="button" class="icon-btn" id="btnDownload" aria-label="Download PDF" aria-haspopup="true" aria-expanded="false" title="Download">
+                                    <i data-lucide="download"></i>
+                                </button>
+                                <div class="download-menu__panel" id="downloadMenuPanel" role="menu" hidden>
+                                    <button type="button" class="download-menu__item" id="btnDownloadQuestionsOnly" role="menuitem">
+                                        <i data-lucide="file-text"></i>
+                                        <span class="download-menu__item-text">
+                                            <span class="download-menu__item-title" data-i18n="download.questionsOnly">Question Paper Only</span>
+                                            <span class="download-menu__item-sub" data-i18n="download.questionsOnlySub">No answers included</span>
+                                        </span>
+                                    </button>
+                                    <button type="button" class="download-menu__item" id="btnDownloadAnswersOnly" role="menuitem">
+                                        <i data-lucide="check-square"></i>
+                                        <span class="download-menu__item-text">
+                                            <span class="download-menu__item-title" data-i18n="download.answersOnly">Answer Key Only</span>
+                                            <span class="download-menu__item-sub" data-i18n="download.answersOnlySub">Just the answers</span>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="download-menu" id="previewMenu">
+                                <button type="button" class="icon-btn" id="btnPreviewMode" aria-label="Preview options" aria-haspopup="true" aria-expanded="false" title="Preview">
+                                    <i data-lucide="eye"></i>
+                                </button>
+                                <div class="download-menu__panel" id="previewMenuPanel" role="menu" hidden>
+                                    <button type="button" class="download-menu__item" id="btnPreviewQuestion" role="menuitem">
+                                        <i data-lucide="file-text"></i>
+                                        <span class="download-menu__item-text">
+                                            <span class="download-menu__item-title" data-i18n="preview.question">Preview Question</span>
+                                            <span class="download-menu__item-sub" data-i18n="preview.questionSub">No answers included</span>
+                                        </span>
+                                    </button>
+                                    <button type="button" class="download-menu__item" id="btnPreviewAnswer" role="menuitem">
+                                        <i data-lucide="check-square"></i>
+                                        <span class="download-menu__item-text">
+                                            <span class="download-menu__item-title" data-i18n="preview.answer">Preview Answer</span>
+                                            <span class="download-menu__item-sub" data-i18n="preview.answerSub">Correct answers &amp; explanations</span>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                            <button type="button" class="icon-btn" id="btnSave" aria-label="Save project" title="Save">
+                                <i data-lucide="save"></i>
+                            </button>
+                            <button type="button" class="icon-btn" id="btnReset" aria-label="Reset document" title="Reset">
+                                <i data-lucide="rotate-ccw"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fixed container with scrollable preview -->
+                <div class="preview-workspace" id="previewWorkspace">
+                    <div class="preview-container" id="previewContainer">
+                        <div class="paper-wrap" id="paperWrap">
+                            <div class="paper" id="paper" role="img" aria-label="Question paper preview">
+                                <!-- rendered document injected here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- ===== SETTINGS DRAWER ===== -->
+        <div class="drawer-overlay" id="drawerOverlay" hidden></div>
+        <aside class="settings-drawer" id="settingsDrawer" aria-label="Document settings" aria-hidden="true">
+            <div class="settings-drawer__head">
+                <h2><i data-lucide="settings-2"></i> <span data-i18n="settings.title">Settings</span></h2>
+                <button type="button" class="icon-btn" id="btnCloseSettings" aria-label="Close settings"><i data-lucide="x"></i></button>
+            </div>
+            <div class="settings-drawer__body">
+
+                <!-- Theme control moved to the header (sun/moon toggle next
+                     to the hamburger) — hidden here, not removed, so the
+                     existing sync logic (segmented__btn[data-theme]) still
+                     works if ever shown again. -->
+                <section class="settings-section" hidden>
+                    <div class="setting-row">
+                        <span class="setting-row__label" data-i18n="settings.theme">Theme</span>
+                        <div class="segmented" role="group" aria-label="Application theme">
+                            <button type="button" class="segmented__btn is-active" data-theme="light"><i data-lucide="sun"></i> <span data-i18n="settings.light">Light</span></button>
+                            <button type="button" class="segmented__btn" data-theme="dark"><i data-lucide="moon"></i> <span data-i18n="settings.dark">Dark</span></button>
+                        </div>
+                    </div>
+                </section>
+                <section class="settings-section">
+                    <div class="setting-row">
+                        <label class="setting-row__label" for="selPageSize" data-i18n="settings.pageSize">Page Size</label>
+                        <select id="selPageSize" class="field-select">
+                            <option value="A4">A4</option>
+                            <option value="Letter">Letter</option>
+                            <option value="Legal">Legal</option>
+                        </select>
+                    </div>
+                    <div class="setting-row">
+                        <label class="setting-row__label" for="selPageColor" data-i18n="settings.pageColor">Page Color</label>
+                        <div class="color-field">
+                            <input type="color" id="selPageColor" value="#ffffff" aria-label="Custom page color">
+                            <input type="text" id="selPageColorHex" class="field-input field-input--hex" value="#FFFFFF" maxlength="7">
+                        </div>
+                    </div>
+                    <div class="color-presets" id="colorPresets" role="group" aria-label="Preset page colors"></div>
+                </section>
+
+                <section class="settings-section">
+                    <div class="setting-row">
+                        <label class="setting-row__label" for="selFontFamily" data-i18n="settings.fontFamily">Font Family</label>
+                        <select id="selFontFamily" class="field-select"></select>
+                    </div>
+                    <div class="setting-row">
+                        <label class="setting-row__label" for="selFontSize" data-i18n="settings.fontSize">Font Size</label>
+                        <select id="selFontSize" class="field-select">
+                            <option selected>10</option><option>11</option><option>12</option><option>13</option>
+                            <option>14</option><option>15</option><option>16</option><option>18</option>
+                            <option>20</option><option>22</option><option>24</option>
+                        </select>
+                    </div>
+                </section>
+
+                <section class="settings-section">
+                    <div class="setting-row">
+                        <span class="setting-row__label" data-i18n="settings.setCode">Set Code</span>
+                        <label class="switch">
+                            <input type="checkbox" id="chkSetCode">
+                            <span class="switch__track"><span class="switch__thumb"></span></span>
+                        </label>
+                    </div>
+                    <div id="setCodeOptions" class="set-code-options" hidden>
+                        <div class="setting-row">
+                            <label class="setting-row__label" for="selNumSets" data-i18n="settings.numSets">Number of Sets</label>
+                            <select id="selNumSets" class="field-select">
+                                <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+                                <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+                            </select>
+                        </div>
+                        <div class="setting-row">
+                            <label class="setting-row__label" for="inpSetNames" data-i18n="settings.setCodeNames">Set Code Names</label>
+                            <input type="text" id="inpSetNames" class="field-input" placeholder="A, B, C" value="A, B, C, D, E, F, G, H, I, J">
+                        </div>
+                        <div class="setting-row">
+                            <label class="setting-row__label" for="selRandomType" data-i18n="settings.randomization">Randomization</label>
+                            <select id="selRandomType" class="field-select" data-i18n-font>
+                                <option value="none" data-i18n="settings.randomNone">No Randomization</option>
+                                <option value="questions" data-i18n="settings.randomQuestions">Randomize Questions</option>
+                                <option value="options" data-i18n="settings.randomOptions">Randomize Options</option>
+                                <option value="both" selected data-i18n="settings.randomBoth">Randomize Questions + Options</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn btn--secondary btn--full" id="btnGenerateSets">
+                            <i data-lucide="shuffle"></i> <span data-i18n="settings.generateSets">Generate Sets</span>
+                        </button>
+                        <p class="setting-hint" id="setGenStatus"></p>
+                    </div>
+                </section>
+
+                <section class="settings-section">
+                    <div class="setting-row">
+                        <label class="setting-row__label" for="inpGeminiKey" data-i18n="settings.geminiKey">Gemini API Key</label>
+                    </div>
+                    <input type="password" id="inpGeminiKey" class="field-input" placeholder="Paste your Gemini API key" autocomplete="off" spellcheck="false">
+                    <p class="setting-hint"><span data-i18n="settings.geminiKeyHint">Add your API from</span> <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a></p>
+                    <div class="setting-row" style="margin-top:10px;">
+                        <label class="setting-row__label" for="selGeminiModel" data-i18n="settings.model">Model</label>
+                        <select id="selGeminiModel" class="field-select" data-i18n-font>
+                            <option value="gemini-3-flash-preview" data-i18n="settings.modelRecommended">Gemini 3 Flash (Recommended)</option>
+                            <option value="gemini-3.1-flash-lite" data-i18n="settings.modelFastest">Gemini 3.1 Flash-Lite (Fastest)</option>
+                            <option value="gemini-2.5-flash-lite">Gemini 2.5 Flash-Lite</option>
+                            <option value="gemini-2.0-flash">Gemini 2.0 Flash</option>
+                        </select>
+                    </div>
+                    <div class="setting-row">
+                        <label class="setting-row__label" for="selAiInsertMode" data-i18n="settings.onGenerate">On Generate</label>
+                        <select id="selAiInsertMode" class="field-select" data-i18n-font>
+                            <option value="append" data-i18n="settings.appendQuestions">Append to existing questions</option>
+                            <option value="replace" data-i18n="settings.replaceQuestions">Replace all questions</option>
+                        </select>
+                    </div>
+                </section>
+
+            </div>
+            <div class="settings-drawer__foot">
+                <button type="button" class="btn btn--ghost btn--full" id="btnDrawerReset" data-i18n="common.reset">Reset</button>
+                <button type="button" class="btn btn--primary btn--full" id="btnDrawerSave" data-i18n="common.save">Save</button>
+            </div>
+        </aside>
+
+        <!-- ===== GOOGLE SIGN-IN MODAL ===== -->
+        <div class="ai-modal-overlay" id="googleAuthOverlay" hidden>
+            <div class="ai-modal google-auth-modal" role="dialog" aria-modal="true" aria-labelledby="googleAuthModalTitle">
+                <div class="ai-modal__head">
+                    <h2 class="google-auth-head" id="googleAuthModalTitle">
+                        <svg width="22" height="22" viewBox="0 0 48 48" aria-hidden="true">
+                            <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12s5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24s8.955,20,20,20s20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/>
+                            <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/>
+                            <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/>
+                            <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/>
+                        </svg>
+                        <span data-i18n="googleAuth.brand">Google</span>
+                    </h2>
+                    <button type="button" class="icon-btn" id="btnCloseGoogleAuth" aria-label="Close"><i data-lucide="x"></i></button>
+                </div>
+                <div class="ai-modal__body google-auth-body" id="googleAuthSignedOutView">
+                    <button type="button" class="btn btn--full google-auth-btn" id="btnGoogleContinue">
+                        <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true">
+                            <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12s5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24s8.955,20,20,20s20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/>
+                            <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/>
+                            <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/>
+                            <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/>
+                        </svg>
+                        <span data-i18n="googleAuth.continue">Continue with Google</span>
+                    </button>
+                    <p class="google-auth-hint" id="googleAuthStatusHint"></p>
+                </div>
+                <div class="ai-modal__body google-auth-body" id="googleAuthSignedInView" hidden>
+                    <img id="googleAuthSignedInAvatar" alt="" width="64" height="64" style="width:64px;height:64px;border-radius:50%;object-fit:cover;">
+                    <p class="google-auth-sub" id="googleAuthSignedInEmail"></p>
+                    <button type="button" class="btn btn--full btn--ghost" id="btnGoogleSignOut">
+                        <i data-lucide="log-out"></i>
+                        <span id="googleSignOutLabel">Sign out</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== DEVELOPER INFO MODAL ===== -->
+        <div class="ai-modal-overlay" id="devInfoOverlay" hidden>
+            <div class="ai-modal dev-info-modal" role="dialog" aria-modal="true" aria-labelledby="devInfoName">
+                <div class="ai-modal__head dev-info-head">
+                    <h2><i data-lucide="user-round"></i> <span>Developer Info</span></h2>
+                    <button type="button" class="icon-btn" id="btnCloseDevInfo" aria-label="Close">
+                        <i data-lucide="x"></i>
+                    </button>
+                </div>
+                <div class="ai-modal__body dev-info-body">
+                    <div class="dev-info-badge"><i data-lucide="code-2"></i><span>Developed by</span></div>
+                    <img class="dev-info-avatar" id="devInfoAvatar" width="76" height="76" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 88 88'%3E%3Crect width='88' height='88' rx='44' fill='%23E8F0FE'/%3E%3Ctext x='44' y='54' font-size='32' text-anchor='middle' fill='%23146EF5' font-family='sans-serif'%3EYR%3C/text%3E%3C/svg%3E" alt="RIFAT HOSSAIN" onerror="console.error('Avatar failed to load, src length was', this.src.length); this.style.display='none'">
+                    <h3 class="dev-info-name" id="devInfoName">RIFAT HOSSAIN</h3>
+
+                    <div class="dev-info-section">
+                        <div class="dev-info-socials">
+                            <a class="dev-info-social dev-info-social--facebook" id="devInfoFacebook" href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.505 17.523 2 12 2S2 6.505 2 12.06c0 5.02 3.657 9.184 8.438 9.94v-7.03H7.898v-2.91h2.54V9.845c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.878h2.773l-.443 2.91h-2.33V22c4.78-.756 8.437-4.92 8.437-9.94Z"/></svg>
+                            </a>
+                            <a class="dev-info-social dev-info-social--instagram" id="devInfoInstagram" href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+                            </a>
+                            <a class="dev-info-social dev-info-social--whatsapp" id="devInfoWhatsapp" href="#" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.81L2 22l5.42-1.42a9.87 9.87 0 0 0 4.62 1.17h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2Zm0 18.06h-.01a8.18 8.18 0 0 1-4.17-1.14l-.3-.18-3.11.82.83-3.03-.2-.31a8.08 8.08 0 0 1-1.26-4.31c0-4.48 3.65-8.13 8.14-8.13 2.18 0 4.22.85 5.76 2.39a8.07 8.07 0 0 1 2.38 5.75c0 4.48-3.65 8.14-8.06 8.14Zm4.46-6.09c-.24-.12-1.44-.71-1.66-.79-.22-.08-.39-.12-.55.12-.16.24-.63.79-.78.95-.14.16-.29.18-.53.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.44-1.35-1.68-.14-.24-.02-.37.11-.49.11-.11.24-.29.37-.43.12-.14.16-.24.24-.4.08-.16.04-.31-.02-.43-.06-.12-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.43.06-.65.31-.22.24-.86.84-.86 2.05 0 1.21.88 2.38 1 2.54.12.16 1.73 2.65 4.2 3.71.59.25 1.05.4 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.44-.59 1.65-1.15.2-.57.2-1.05.14-1.15-.06-.1-.22-.16-.46-.28Z"/></svg>
+                            </a>
+                            <a class="dev-info-social dev-info-social--call" id="devInfoCall" href="tel:" aria-label="Call">
+                                <i data-lucide="phone"></i>
+                            </a>
+                            <a class="dev-info-social dev-info-social--email" id="devInfoEmail" href="mailto:" aria-label="Email">
+                                <i data-lucide="mail"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== COMING SOON MODAL (History) -->
+        <div class="ai-modal-overlay" id="comingSoonOverlay" hidden>
+            <div class="ai-modal" style="max-width:360px;" role="dialog" aria-modal="true" aria-labelledby="comingSoonTitle">
+                <div class="ai-modal__head">
+                    <h2><i data-lucide="sparkles" aria-hidden="true"></i><span id="comingSoonTitle">Coming Soon</span></h2>
+                    <button type="button" class="icon-btn" id="btnCloseComingSoon" aria-label="Close"><i data-lucide="x"></i></button>
+                </div>
+                <div class="ai-modal__body" style="text-align:center;padding:28px 20px;">
+                    <div class="ai-capture-placeholder__icon" style="margin:0 auto 14px;">
+                        <i id="comingSoonIcon" data-lucide="clock"></i>
+                    </div>
+                    <p id="comingSoonMessage" style="color:var(--text-secondary);font-size:13.5px;line-height:1.6;margin:0;">This feature is coming soon.</p>
+                </div>
+                <div class="ai-modal__foot">
+                    <button type="button" class="btn btn--primary btn--full" id="btnCloseComingSoon2" data-i18n="common.ok">OK</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== HISTORY MODAL ===== -->
+        <div class="ai-modal-overlay" id="historyOverlay" hidden>
+            <div class="history-modal" role="dialog" aria-modal="true" aria-labelledby="historyModalTitle">
+                <div class="history-modal__head">
+                    <h2 id="historyModalTitle"><i data-lucide="history"></i><span data-i18n="history.title">History</span></h2>
+                    <button type="button" class="icon-btn" id="btnCloseHistory" aria-label="Close"><i data-lucide="x"></i></button>
+                </div>
+                <div class="history-modal__body" id="historyModalBody">
+                    <!-- populated by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== TOASTS ===== -->
+        <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+    </div>
+    <!-- end app-container -->
+
+    <script src="app.js"></script>
+
+    <!-- ===== HISTORY FEATURE ===== -->
+    <script src="history.js"></script>
+
+
+    <!-- ===== AI CAPTURE MODAL (rendered outside .app-container so it can never be clipped by ancestor overflow on mobile browsers) ===== -->
+    <div class="ai-modal-overlay" id="aiModalOverlay" hidden>
+        <div class="ai-modal" role="dialog" aria-modal="true" aria-labelledby="aiModalTitle">
+            <div class="ai-modal__head">
+                <h2 id="aiModalTitle"><i data-lucide="sparkles"></i> <span data-i18n="ai.title">Generate MCQs with AI</span></h2>
+                <button type="button" class="icon-btn" id="btnCloseAiModal" aria-label="Close"><i data-lucide="x"></i></button>
+            </div>
+            <div class="ai-modal__body" id="aiModalBody">
+
+                <div id="aiKeyHint" class="ai-key-hint" hidden>
+                </div>
+
+                <div class="ai-capture-stage" id="aiCaptureStage">
+                    <div class="ai-capture-placeholder" id="aiCapturePlaceholder">
+                        <div class="ai-capture-placeholder__icon"><i data-lucide="image-plus"></i></div>
+                        <span class="ai-capture-placeholder__title" id="aiCaptureTitle" data-i18n="ai.noFileSelected">No file selected</span>
+                        <div class="ai-capture-placeholder__actions">
+                            <button type="button" class="btn btn--secondary" id="btnAiStartCamera"><i data-lucide="camera"></i><span data-i18n="ai.capture">Capture</span></button>
+                            <button type="button" class="btn btn--secondary" id="btnAiPickFile"><i data-lucide="upload"></i><span data-i18n="ai.upload">Upload</span></button>
+                        </div>
+                        <span class="ai-capture-placeholder__hint" data-i18n="ai.fileHint">JPG, PNG, PDF, DOCX, or PPTX (Multiple file allowed)</span>
+                    </div>
+                    <div class="ai-file-list" id="aiFileList" hidden>
+                        <div class="ai-file-list__items" id="aiFileListItems"></div>
+                        <button type="button" class="ai-file-list__add" id="btnAiAddMore"><i data-lucide="plus"></i><span data-i18n="ai.addMore">Add more</span></button>
+                    </div>
+                </div>
+
+                <div class="setting-row ai-custom-prompt-row">
+                    <span class="setting-row__label ai-custom-prompt-row__label">
+                        <i data-lucide="wand-2"></i>
+                        <span>
+                            <span data-i18n="ai.customPrompt">Custom Prompt</span>
+                            <small data-i18n="ai.customPromptHint">Generate from a topic (No file needed)</small>
+                        </span>
+                    </span>
+                    <label class="switch">
+                        <input type="checkbox" id="chkAiCustomPrompt">
+                        <span class="switch__track"><span class="switch__thumb"></span></span>
+                    </label>
+                </div>
+
+                <div class="ai-modal__field">
+                    <label for="aiPromptInput" id="aiPromptLabel" data-i18n="ai.instructionLabel">Instruction for MCQ Generation</label>
+                    <textarea id="aiPromptInput" class="ai-prompt-textarea" placeholder="Generate 30 MCQs from this page, medium difficulty, include the correct answer and explanation."></textarea>
+                </div>
+
+                <div class="ai-modal__status" id="aiStatus"></div>
+            </div>
+            <div class="ai-modal__foot">
+                <button type="button" class="btn btn--ghost btn--full" id="btnAiCancel" data-i18n="common.cancel">Cancel</button>
+                <button type="button" class="btn btn--primary btn--full" id="btnAiGenerate"><i data-lucide="sparkles"></i> <span data-i18n="ai.generateMcqs">Generate MCQs</span></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== FIREBASE BRIDGE =====
+         Wires Google Sign-In + Firestore sync on top of the app's existing
+         localStorage-based Storage / History / Folder systems, without
+         modifying those closures. Strategy:
+           1. Real Google auth via the FirebaseSync API published earlier.
+           2. Once signed in, the three localStorage keys the app already
+              uses (project state, AI settings, history, folders) are kept
+              in sync with per-user Firestore documents:
+                users/{uid}                       -> geminiKey + AI settings + theme/settings
+                users/{uid}/papers/{paperId}       -> one doc per history entry
+                users/{uid}/folders/{folderId}     -> one doc per folder
+              Firestore is the source of truth once signed in; localStorage
+              stays as an instant-load cache and offline fallback.
+           3. First sign-in migrates whatever is already sitting in
+              localStorage up into Firestore. -->
+    <script src="firebase-bridge.js"></script>
+
+</body>
+</html>
