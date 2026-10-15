@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>try{var __r=localStorage.getItem("mcqGenerator.project.v1"),__m=__r&&/"theme":"(dark|light)"/.exec(__r);if(__m)document.documentElement.setAttribute("data-theme",__m[1])}catch(e){}</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>IntelliQ - Create MCQ Papers</title>
+    <meta name="description" content="IntelliQ is a free AI-powered MCQ generator: create, edit, and export exam question papers with answer keys in English or Bangla. Generate MCQs from a topic or an uploaded file, randomize question sets, and download print-ready PDFs.">
+    <meta name="keywords" content="MCQ generator, AI question generator, exam paper maker, Bangla MCQ, question paper generator, BCS preliminary questions, quiz maker, PDF exam generator">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Rifatplex">
+    <link rel="canonical" href="https://intelliq.rifatplex.com/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="IntelliQ - AI MCQ Generator">
+    <meta property="og:description" content="Create, edit, and export exam question papers with AI — in English or Bangla. Generate MCQs from a topic or file, randomize sets, and download print-ready PDFs.">
+    <meta property="og:site_name" content="IntelliQ">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="bn_BD">
+    <meta property="og:url" content="https://intelliq.rifatplex.com/">
+    
+    <meta property="og:image" content="https://intelliq.rifatplex.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="IntelliQ - AI MCQ Generator">
+    <meta name="twitter:description" content="Create, edit, and export exam question papers with AI — in English or Bangla. Generate MCQs from a topic or file, randomize sets, and download print-ready PDFs.">
+    <meta name="twitter:image" content="https://intelliq.rifatplex.com/og-image.png">
+
+    <meta name="theme-color" content="#146EF5">
+    <link rel="icon" type="image/png" href="data:image/png;base64,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">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+
+    <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js" defer>
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js" defer>
+    </script>
+
+    <script type="module" src="firebase.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+
+        <header class="app-header">
+            <div class="app-header__brand">
+                <button type="button" class="app-header__mark" id="btnDevInfo" aria-haspopup="dialog" aria-label="Developer info" title="Developer info">
+                    <img decoding="async" width="40" height="40" src="data:image/png;base64,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" alt="IntelliQ logo" width="40" height="40">
+                </button>
+                <div class="app-header__title">
+                    <h1>IntelliQ</h1>
+                    <p data-i18n="app.tagline">Made in Rifatplex</p>
+                </div>
+            </div>
+            <div class="app-header__actions">
+                <button type="button" class="theme-toggle" id="btnThemeToggle" aria-label="Toggle light or dark theme" title="Toggle theme">
+                    <i data-lucide="sun" class="theme-toggle__sun"></i>
+                    <i data-lucide="moon" class="theme-toggle__moon"></i>
+                </button>
+                <button type="button" class="theme-toggle" id="btnGoogleAuth" aria-label="Sign in with Google" title="Sign in with Google">
+                    <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true" id="googleAuthGlyph">
+                        <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12s5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24s8.955,20,20,20s20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/>
+                        <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/>
+                        <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/>
+                        <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/>
+                    </svg>
+                    <img id="googleAuthAvatar" alt="" hidden width="24" height="24" style="width:24px;height:24px;border-radius:50%;object-fit:cover;">
+                </button>
+                <button type="button" class="theme-toggle" id="btnHistory" aria-label="History" title="History">
+                    <i data-lucide="history"></i>
+                </button>
+                <button type="button" class="hamburger-btn" id="btnSettingsInput" aria-haspopup="true" aria-expanded="false" aria-label="Open settings" title="Settings">
+                    <span class="hamburger-btn__bars"><span></span><span></span><span></span></span>
+                </button>
+            </div>
+        </header>
+
+        <nav class="mobile-tabs" aria-label="Panel switcher">
+            <button type="button" class="mobile-tabs__btn is-active" data-tab="input">
+                <i data-lucide="edit-3"></i> <span data-i18n="tabs.input">Input</span>
+            </button>
+
+            <button type="button" class="mobile-tabs__btn" data-tab="preview">
+                <i data-lucide="eye"></i> <span data-i18n="tabs.preview">Preview</span>
+            </button>
+        </nav>
+
+        <main class="app-shell">
+
+            <section class="panel panel--input" id="panelInput" aria-label="Question editor">
+                <div class="panel__scroll">
+
+                    <div class="panel-topbar">
+                        <div class="lang-switch" role="group" aria-label="Document language">
+                            <button type="button" class="lang-switch__btn is-active" data-lang="en">English</button>
+                            <button type="button" class="lang-switch__btn" data-lang="bn">বাংলা</button>
+                        </div>
+                        <div class="topbar-actions">
+                            <button type="button" class="btn btn--ai-mode" id="btnAiMode" aria-haspopup="dialog" aria-label="Open AI Mode to generate MCQs from a photo or PDF" title="AI Mode">
+                                <i data-lucide="sparkles"></i><span data-i18n="topbar.aiMode">AI Mode</span>
+                            </button>
+                        </div>
+                    </div>
+                    <input type="file" id="aiFileInput" accept="image/*,application/pdf,.pdf,.doc,.docx,.ppt,.pptx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.ms-powerpoint,application/vnd.openxmlformats-officedocument.presentationml.presentation" multiple class="sr-only" tabindex="-1" aria-hidden="true">
+                    <input type="file" id="aiCameraInput" accept="image/*" capture="environment" class="sr-only" tabindex="-1" aria-hidden="true">
+
+                    <div class="header-card">
+
+                        <div class="folder-field">
+                            <label class="field-label" data-i18n="field.folder">Folder / Group</label>
+                            <button type="button" class="folder-select-btn" id="btnFolderSelect" aria-haspopup="true" aria-expanded="false">
+                                <i data-lucide="folder" class="folder-select-btn__icon"></i>
+                                <span class="folder-select-btn__label" id="folderSelectLabel" data-i18n="field.ungrouped">Ungrouped</span>
+                                <i data-lucide="chevron-down" class="folder-select-btn__chevron"></i>
+                            </button>
+                        </div>
+
+                        <div class="field-block">
+                            <label class="field-label" for="inpTitle" data-i18n="field.examTitle">Examination Title</label>
+                            <input type="text" id="inpTitle" class="field-input" placeholder="Enter examination title" data-ph-en="Enter examination title" data-ph-bn="পরীক্ষার শিরোনাম লিখুন" autocomplete="off">
+                        </div>
+
+                        <div class="field-block">
+                            <label class="field-label" for="inpSubtitle" data-i18n="field.subtitle">Subtitle / Institution</label>
+                            <input type="text" id="inpSubtitle" class="field-input" placeholder="Enter subtitle / institution name" data-ph-en="Enter subtitle / institution name" data-ph-bn="সাব-টাইটেল / প্রতিষ্ঠানের নাম লিখুন" autocomplete="off">
+                        </div>
+
+                        <div class="field-row">
+                            <div class="field-block">
+                                <label class="field-label" for="inpMarks" data-i18n="field.marks">Marks</label>
+                                <input type="text" id="inpMarks" class="field-input" placeholder="e.g. 50" data-ph-en="50" data-ph-bn="৫০" autocomplete="off">
+                            </div>
+                            <div class="field-block">
+                                <label class="field-label" for="inpTime" data-i18n="field.time">Time</label>
+                                <input type="text" id="inpTime" class="field-input" placeholder="e.g. 60 Minutes" data-ph-en="60 Minutes" data-ph-bn="৬০ মিনিট" autocomplete="off">
+                            </div>
+                        </div>
+
+                        <div class="field-block">
+                            <label class="field-label" for="inpNote" data-i18n="field.note">Note / Instructions</label>
+                            <textarea id="inpNote" class="field-input field-textarea" rows="2" placeholder="Enter instructions or note..." data-ph-en="Enter instructions or note..." data-ph-bn="নির্দেশনা বা নোট লিখুন..."></textarea>
+                        </div>
+
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <div class="qtabs" id="qTypeTabs" role="tablist" aria-label="Question type">
+                        <button type="button" class="qtabs__btn qtabs__btn--mix is-active" role="tab" aria-selected="true" data-qtab="mix"><span class="qtabs__full">Mixed Questions</span><span class="qtabs__short">Mix</span></button>
+                        <button type="button" class="qtabs__btn" role="tab" aria-selected="false" data-qtab="mcq">MCQ</button>
+                        <button type="button" class="qtabs__btn" role="tab" aria-selected="false" data-qtab="creative">CQ</button>
+                        <button type="button" class="qtabs__btn" role="tab" aria-selected="false" data-qtab="tf">T/F</button>
+                        <button type="button" class="qtabs__btn" role="tab" aria-selected="false" data-qtab="fill">Blanks</button>
+                        <button type="button" class="qtabs__btn" role="tab" aria-selected="false" data-qtab="short">SQ</button>
+                        <button type="button" class="qtabs__btn" role="tab" aria-selected="false" data-qtab="desc">BQ</button>
+                    </div>
+                    
+                    <div class="qcols" id="qColsBar" aria-label="Preview column layout">
+                        <span class="qcols__label" id="qColsLabel"></span>
+                        <div class="qcols__group" id="qColsBtns" role="group">
+                            <button type="button" class="qcols__btn" data-cols="1" title="1 column">1</button>
+                            <button type="button" class="qcols__btn" data-cols="2" title="2 columns">2</button>
+                            <button type="button" class="qcols__btn" data-cols="3" title="3 columns">3</button>
+                            <button type="button" class="qcols__btn qcols__btn--auto" data-cols="auto" id="qColsAuto" title="Reset to category default">Auto</button>
+                        </div>
+                    </div>
+                    
+                    <div class="qsec" id="qSecBar">
+                        <div class="qsec__head">
+                            <label class="qsec__toggle"><input type="checkbox" id="qSecToggle" checked><span id="qSecToggleLbl"></span></label>
+                        </div>
+                        <div class="qsec__layouts" id="qSecLayouts" role="radiogroup">
+                            <div class="qsec__lay" data-lay="left" role="radio" tabindex="0" aria-checked="false">
+                                <div class="qsec__mock"><b data-role="mname"></b><em data-role="minstr"></em></div>
+                                <label class="qsec__linechk"><input type="checkbox" data-line="left"><span data-role="line"></span></label>
+                            </div>
+                            <div class="qsec__lay" data-lay="center" role="radio" tabindex="0" aria-checked="false">
+                                <div class="qsec__mock"><b data-role="mname"></b><em data-role="minstr"></em></div>
+                                <label class="qsec__linechk"><input type="checkbox" data-line="center"><span data-role="line"></span></label>
+                            </div>
+                        </div>
+                        <button type="button" class="qsec__dd" id="qSecDd" aria-expanded="false" aria-controls="qSecList">
+                            <span class="qsec__dd-label" id="qSecDdLbl"></span>
+                            <svg class="qsec__dd-chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                        </button>
+                        <div class="qsec__list" id="qSecList" hidden></div>
+                        <div class="qsec__hint" id="qSecHint"></div>
+                    </div>
+
+                    <div class="questions-head">
+                        <h2 data-i18n="questions.heading">Add Questions</h2>
+                        <span class="questions-head__count" id="questionCount">1 question</span>
+                    </div>
+
+                    <div id="questionsList" class="questions-list"></div>
+
+                    <footer class="app-footer">©IntelliQ • Rifatplex • 2026</footer>
+
+                </div>
+            </section>
+
+            <section class="panel panel--preview" id="panelPreview" aria-label="Live preview">
+
+                <div class="preview-toolbar">
+                    <div class="zoom-controls" role="group" aria-label="Zoom controls">
+                        <button type="button" class="icon-btn" id="btnZoomOut" aria-label="Zoom out"><i data-lucide="minus"></i></button>
+                        <button type="button" class="zoom-controls__value" id="zoomValue" aria-label="Reset zoom" title="Click to reset zoom">100%</button>
+                        <button type="button" class="icon-btn" id="btnZoomIn" aria-label="Zoom in"><i data-lucide="plus"></i></button>
+                    </div>
+
+                    <div class="preview-toolbar__right">
+                        <div class="set-switch" id="setSwitch" hidden>
+                            <label for="setPicker" class="sr-only">Preview set</label>
+                            <select id="setPicker" class="set-switch__select"></select>
+                        </div>
+                        <div class="topbar-actions">
+                            <div class="download-menu" id="downloadMenu">
+                                <button type="button" class="icon-btn" id="btnDownload" aria-label="Download PDF" aria-haspopup="true" aria-expanded="false" title="Download">
+                                    <i data-lucide="download"></i>
+                                </button>
+                                <div class="download-menu__panel" id="downloadMenuPanel" role="menu" hidden>
+                                    <button type="button" class="download-menu__item" id="btnDownloadQuestionsOnly" role="menuitem">
+                                        <i data-lucide="file-text"></i>
+                                        <span class="download-menu__item-text">
+                                            <span class="download-menu__item-title" data-i18n="download.questionsOnly">Question Paper Only</span>
+                                            <span class="download-menu__item-sub" data-i18n="download.questionsOnlySub">No answers included</span>
+                                        </span>
+                                    </button>
+                                    <button type="button" class="download-menu__item" id="btnDownloadAnswersOnly" role="menuitem">
+                                        <i data-lucide="check-square"></i>
+                                        <span class="download-menu__item-text">
+                                            <span class="download-menu__item-title" data-i18n="download.answersOnly">Answer Key Only</span>
+                                            <span class="download-menu__item-sub" data-i18n="download.answersOnlySub">Just the answers</span>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="download-menu" id="previewMenu">
+                                <button type="button" class="icon-btn" id="btnPreviewMode" aria-label="Preview options" aria-haspopup="true" aria-expanded="false" title="Preview">
+                                    <i data-lucide="eye"></i>
+                                </button>
+                                <div class="download-menu__panel" id="previewMenuPanel" role="menu" hidden>
+                                    <button type="button" class="download-menu__item" id="btnPreviewQuestion" role="menuitem">
+                                        <i data-lucide="file-text"></i>
+                                        <span class="download-menu__item-text">
+                                            <span class="download-menu__item-title" data-i18n="preview.question">Preview Question</span>
+                                            <span class="download-menu__item-sub" data-i18n="preview.questionSub">No answers included</span>
+                                        </span>
+                                    </button>
+                                    <button type="button" class="download-menu__item" id="btnPreviewAnswer" role="menuitem">
+                                        <i data-lucide="check-square"></i>
+                                        <span class="download-menu__item-text">
+                                            <span class="download-menu__item-title" data-i18n="preview.answer">Preview Answer</span>
+                                            <span class="download-menu__item-sub" data-i18n="preview.answerSub">Correct answers &amp; explanations</span>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                            <button type="button" class="icon-btn" id="btnSave" aria-label="Save project" title="Save">
+                                <i data-lucide="save"></i>
+                            </button>
+                            <button type="button" class="icon-btn" id="btnReset" aria-label="Reset document" title="Reset">
+                                <i data-lucide="rotate-ccw"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="preview-workspace" id="previewWorkspace">
+                    <div class="preview-container" id="previewContainer">
+                        <div class="paper-wrap" id="paperWrap">
+                            <div class="paper" id="paper" role="img" aria-label="Question paper preview">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+
+        <div class="drawer-overlay" id="drawerOverlay" hidden></div>
+        <aside class="settings-drawer" id="settingsDrawer" aria-label="Document settings" aria-hidden="true">
+            <div class="settings-drawer__head">
+                <h2><i data-lucide="settings-2"></i> <span data-i18n="settings.title">Settings</span></h2>
+                <button type="button" class="icon-btn" id="btnCloseSettings" aria-label="Close settings"><i data-lucide="x"></i></button>
+            </div>
+            <div class="settings-drawer__body">
+
+                <section class="settings-section" hidden>
+                    <div class="setting-row">
+                        <span class="setting-row__label" data-i18n="settings.theme">Theme</span>
+                        <div class="segmented" role="group" aria-label="Application theme">
+                            <button type="button" class="segmented__btn is-active" data-theme="light"><i data-lucide="sun"></i> <span data-i18n="settings.light">Light</span></button>
+                            <button type="button" class="segmented__btn" data-theme="dark"><i data-lucide="moon"></i> <span data-i18n="settings.dark">Dark</span></button>
+                        </div>
+                    </div>
+                </section>
+                <section class="settings-section">
+                    <div class="setting-row">
+                        <label class="setting-row__label" for="selPageSize" data-i18n="settings.pageSize">Page Size</label>
+                        <select id="selPageSize" class="field-select">
+                            <option value="A4">A4</option>
+                            <option value="Letter">Letter</option>
+                            <option value="Legal">Legal</option>
+                        </select>
+                    </div>
+                    <div class="setting-row">
+                        <label class="setting-row__label" for="selPageColor" data-i18n="settings.pageColor">Page Color</label>
+                        <div class="color-field">
+                            <input type="color" id="selPageColor" value="#ffffff" aria-label="Custom page color">
+                            <input type="text" id="selPageColorHex" class="field-input field-input--hex" value="#FFFFFF" maxlength="7">
+                        </div>
+                    </div>
+                    <div class="color-presets" id="colorPresets" role="group" aria-label="Preset page colors"></div>
+                </section>
+
+                <section class="settings-section">
+                    <div class="setting-row">
+                        <label class="setting-row__label" for="selFontFamily" data-i18n="settings.fontFamily">Font Family</label>
+                        <select id="selFontFamily" class="field-select"></select>
+                    </div>
+                    <div class="setting-row">
+                        <label class="setting-row__label" for="selFontSize" data-i18n="settings.fontSize">Font Size</label>
+                        <select id="selFontSize" class="field-select">
+                            <option selected>10</option><option>11</option><option>12</option><option>13</option>
+                            <option>14</option><option>15</option><option>16</option><option>18</option>
+                            <option>20</option><option>22</option><option>24</option>
+                        </select>
+                    </div>
+                </section>
+
+                <section class="settings-section">
+                    <label class="setting-check" for="chkShowMarks">
+                        <input type="checkbox" id="chkShowMarks" checked>
+                        <span class="setting-check__text" data-i18n="settings.showMarks">Show marks in [ ] on the right of each question</span>
+                    </label>
+                </section>
+
+                <section class="settings-section">
+                    <div class="setting-row">
+                        <span class="setting-row__label" data-i18n="settings.setCode">Set Code</span>
+                        <label class="switch">
+                            <input type="checkbox" id="chkSetCode">
+                            <span class="switch__track"><span class="switch__thumb"></span></span>
+                        </label>
+                    </div>
+                    <div id="setCodeOptions" class="set-code-options" hidden>
+                        <div class="setting-row">
+                            <label class="setting-row__label" for="selNumSets" data-i18n="settings.numSets">Number of Sets</label>
+                            <select id="selNumSets" class="field-select">
+                                <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+                                <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+                            </select>
+                        </div>
+                        <div class="setting-row">
+                            <label class="setting-row__label" for="inpSetNames" data-i18n="settings.setCodeNames">Set Code Names</label>
+                            <input type="text" id="inpSetNames" class="field-input" placeholder="A, B, C" value="A, B, C, D, E, F, G, H, I, J">
+                        </div>
+                        <div class="setting-row">
+                            <label class="setting-row__label" for="selRandomType" data-i18n="settings.randomization">Randomization</label>
+                            <select id="selRandomType" class="field-select" data-i18n-font>
+                                <option value="none" data-i18n="settings.randomNone">No Randomization</option>
+                                <option value="questions" data-i18n="settings.randomQuestions">Randomize Questions</option>
+                                <option value="options" data-i18n="settings.randomOptions">Randomize Options</option>
+                                <option value="both" selected data-i18n="settings.randomBoth">Randomize Questions + Options</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn btn--secondary btn--full" id="btnGenerateSets">
+                            <i data-lucide="shuffle"></i> <span data-i18n="settings.generateSets">Generate Sets</span>
+                        </button>
+                        <p class="setting-hint" id="setGenStatus"></p>
+                    </div>
+                </section>
+
+                <section class="settings-section">
+                    <div class="setting-row">
+                        <label class="setting-row__label" for="inpGeminiKey" data-i18n="settings.geminiKey">Gemini API Key</label>
+                    </div>
+                    <input type="password" id="inpGeminiKey" class="field-input" placeholder="Paste your Gemini API key" autocomplete="off" spellcheck="false">
+                    <p class="setting-hint"><span data-i18n="settings.geminiKeyHint">Add your API from</span> <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a></p>
+                    <div class="setting-row" style="margin-top:10px;">
+                        <label class="setting-row__label" for="selGeminiModel" data-i18n="settings.model">Model</label>
+                        <select id="selGeminiModel" class="field-select" data-i18n-font>
+                            <option value="gemini-3-flash-preview" data-i18n="settings.modelRecommended">Gemini 3 Flash (Recommended)</option>
+                            <option value="gemini-3.1-flash-lite" data-i18n="settings.modelFastest">Gemini 3.1 Flash-Lite (Fastest)</option>
+                            <option value="gemini-2.5-flash-lite">Gemini 2.5 Flash-Lite</option>
+                            <option value="gemini-2.0-flash">Gemini 2.0 Flash</option>
+                        </select>
+                    </div>
+                    <div class="setting-row">
+                        <label class="setting-row__label" for="selAiInsertMode" data-i18n="settings.onGenerate">On Generate</label>
+                        <select id="selAiInsertMode" class="field-select" data-i18n-font>
+                            <option value="append" data-i18n="settings.appendQuestions">Append to existing questions</option>
+                            <option value="replace" data-i18n="settings.replaceQuestions">Replace all questions</option>
+                        </select>
+                    </div>
+                </section>
+
+            </div>
+            <div class="settings-drawer__foot">
+                <button type="button" class="btn btn--ghost btn--full" id="btnDrawerReset" data-i18n="common.reset">Reset</button>
+                <button type="button" class="btn btn--primary btn--full" id="btnDrawerSave" data-i18n="common.save">Save</button>
+            </div>
+        </aside>
+
+        <div class="ai-modal-overlay" id="googleAuthOverlay" hidden>
+            <div class="ai-modal google-auth-modal" role="dialog" aria-modal="true" aria-labelledby="googleAuthModalTitle">
+                <div class="ai-modal__head">
+                    <h2 class="google-auth-head" id="googleAuthModalTitle">
+                        <svg width="22" height="22" viewBox="0 0 48 48" aria-hidden="true">
+                            <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12s5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24s8.955,20,20,20s20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/>
+                            <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/>
+                            <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/>
+                            <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/>
+                        </svg>
+                        <span data-i18n="googleAuth.brand">Google</span>
+                    </h2>
+                    <button type="button" class="icon-btn" id="btnCloseGoogleAuth" aria-label="Close"><i data-lucide="x"></i></button>
+                </div>
+                <div class="ai-modal__body google-auth-body" id="googleAuthSignedOutView">
+                    <button type="button" class="btn btn--full google-auth-btn" id="btnGoogleContinue">
+                        <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true">
+                            <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12s5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24s8.955,20,20,20s20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/>
+                            <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/>
+                            <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/>
+                            <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/>
+                        </svg>
+                        <span data-i18n="googleAuth.continue">Continue with Google</span>
+                    </button>
+                    <p class="google-auth-hint" id="googleAuthStatusHint"></p>
+                </div>
+                <div class="ai-modal__body google-auth-body" id="googleAuthSignedInView" hidden>
+                    <img id="googleAuthSignedInAvatar" alt="" width="64" height="64" style="width:64px;height:64px;border-radius:50%;object-fit:cover;">
+                    <p class="google-auth-sub" id="googleAuthSignedInEmail"></p>
+                    <button type="button" class="btn btn--full btn--ghost" id="btnGoogleSignOut">
+                        <i data-lucide="log-out"></i>
+                        <span id="googleSignOutLabel">Sign out</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="ai-modal-overlay" id="devInfoOverlay" hidden>
+            <div class="ai-modal dev-info-modal" role="dialog" aria-modal="true" aria-labelledby="devInfoName">
+                <div class="ai-modal__head dev-info-head">
+                    <h2><i data-lucide="user-round"></i> <span>Developer Info</span></h2>
+                    <button type="button" class="icon-btn" id="btnCloseDevInfo" aria-label="Close">
+                        <i data-lucide="x"></i>
+                    </button>
+                </div>
+                <div class="ai-modal__body dev-info-body">
+                    <div class="dev-info-badge"><i data-lucide="code-2"></i><span>Developed by</span></div>
+                    <img class="dev-info-avatar" id="devInfoAvatar" width="76" height="76" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 88 88'%3E%3Crect width='88' height='88' rx='44' fill='%23E8F0FE'/%3E%3Ctext x='44' y='54' font-size='32' text-anchor='middle' fill='%23146EF5' font-family='sans-serif'%3EYR%3C/text%3E%3C/svg%3E" alt="RIFAT HOSSAIN" onerror="console.error('Avatar failed to load, src length was', this.src.length); this.style.display='none'">
+                    <h3 class="dev-info-name" id="devInfoName">RIFAT HOSSAIN</h3>
+
+                    <div class="dev-info-section">
+                        <div class="dev-info-socials">
+                            <a class="dev-info-social dev-info-social--facebook" id="devInfoFacebook" href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.505 17.523 2 12 2S2 6.505 2 12.06c0 5.02 3.657 9.184 8.438 9.94v-7.03H7.898v-2.91h2.54V9.845c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.878h2.773l-.443 2.91h-2.33V22c4.78-.756 8.437-4.92 8.437-9.94Z"/></svg>
+                            </a>
+                            <a class="dev-info-social dev-info-social--instagram" id="devInfoInstagram" href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+                            </a>
+                            <a class="dev-info-social dev-info-social--whatsapp" id="devInfoWhatsapp" href="#" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.81L2 22l5.42-1.42a9.87 9.87 0 0 0 4.62 1.17h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2Zm0 18.06h-.01a8.18 8.18 0 0 1-4.17-1.14l-.3-.18-3.11.82.83-3.03-.2-.31a8.08 8.08 0 0 1-1.26-4.31c0-4.48 3.65-8.13 8.14-8.13 2.18 0 4.22.85 5.76 2.39a8.07 8.07 0 0 1 2.38 5.75c0 4.48-3.65 8.14-8.06 8.14Zm4.46-6.09c-.24-.12-1.44-.71-1.66-.79-.22-.08-.39-.12-.55.12-.16.24-.63.79-.78.95-.14.16-.29.18-.53.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.44-1.35-1.68-.14-.24-.02-.37.11-.49.11-.11.24-.29.37-.43.12-.14.16-.24.24-.4.08-.16.04-.31-.02-.43-.06-.12-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.43.06-.65.31-.22.24-.86.84-.86 2.05 0 1.21.88 2.38 1 2.54.12.16 1.73 2.65 4.2 3.71.59.25 1.05.4 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.44-.59 1.65-1.15.2-.57.2-1.05.14-1.15-.06-.1-.22-.16-.46-.28Z"/></svg>
+                            </a>
+                            <a class="dev-info-social dev-info-social--call" id="devInfoCall" href="tel:" aria-label="Call">
+                                <i data-lucide="phone"></i>
+                            </a>
+                            <a class="dev-info-social dev-info-social--email" id="devInfoEmail" href="mailto:" aria-label="Email">
+                                <i data-lucide="mail"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ai-modal-overlay" id="comingSoonOverlay" hidden>
+            <div class="ai-modal" style="max-width:360px;" role="dialog" aria-modal="true" aria-labelledby="comingSoonTitle">
+                <div class="ai-modal__head">
+                    <h2><i data-lucide="sparkles" aria-hidden="true"></i><span id="comingSoonTitle">Coming Soon</span></h2>
+                    <button type="button" class="icon-btn" id="btnCloseComingSoon" aria-label="Close"><i data-lucide="x"></i></button>
+                </div>
+                <div class="ai-modal__body" style="text-align:center;padding:28px 20px;">
+                    <div class="ai-capture-placeholder__icon" style="margin:0 auto 14px;">
+                        <i id="comingSoonIcon" data-lucide="clock"></i>
+                    </div>
+                    <p id="comingSoonMessage" style="color:var(--text-secondary);font-size:13.5px;line-height:1.6;margin:0;">This feature is coming soon.</p>
+                </div>
+                <div class="ai-modal__foot">
+                    <button type="button" class="btn btn--primary btn--full" id="btnCloseComingSoon2" data-i18n="common.ok">OK</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="ai-modal-overlay" id="historyOverlay" hidden>
+            <div class="history-modal" role="dialog" aria-modal="true" aria-labelledby="historyModalTitle">
+                <div class="history-modal__head">
+                    <h2 id="historyModalTitle"><i data-lucide="history"></i><span data-i18n="history.title">History</span></h2>
+                    <button type="button" class="icon-btn" id="btnCloseHistory" aria-label="Close"><i data-lucide="x"></i></button>
+                </div>
+                <div class="history-modal__body" id="historyModalBody">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+<div class="ai-modal-overlay" id="aiModalOverlay" hidden>
+        <div class="ai-modal" role="dialog" aria-modal="true" aria-labelledby="aiModalTitle">
+            <div class="ai-modal__head">
+                <h2 id="aiModalTitle"><i data-lucide="sparkles"></i> <span data-i18n="ai.title">Generate Questions with AI</span></h2>
+                <button type="button" class="icon-btn" id="btnCloseAiModal" aria-label="Close"><i data-lucide="x"></i></button>
+            </div>
+            <div class="ai-modal__body" id="aiModalBody">
+
+                <div id="aiKeyHint" class="ai-key-hint" hidden>
+                </div>
+
+                <section class="iq-ai-types" aria-labelledby="iqAiTypesTitle">
+                    <div class="iq-ai-types__heading">
+                        <div><h3 id="iqAiTypesTitle">Question types</h3></div><span class="iq-ai-total" id="iqAiTotal"></span>
+                    </div>
+                    <div id="iqAiTypeList" class="iq-ai-type-list">
+                        <div class="iq-ai-type" data-ai-type="mcq" data-count="19"><button type="button" class="iq-ai-drag" aria-label="Drag MCQ category" title="Drag to reorder">⠿</button><div class="iq-ai-type__name"><strong>MCQ</strong></div><label class="iq-ai-count"><input type="number" data-ai-count min="1" max="100" step="1" inputmode="numeric" value="19" aria-label="Number of mcq questions"></label><label class="iq-ai-switch"><input type="checkbox" data-ai-enabled checked><span></span><em class="sr-only">Enable MCQ</em></label></div>
+                        <div class="iq-ai-type" data-ai-type="tf" data-count="10"><button type="button" class="iq-ai-drag" aria-label="Drag True False category" title="Drag to reorder">⠿</button><div class="iq-ai-type__name"><strong>True/False</strong></div><label class="iq-ai-count"><input type="number" data-ai-count min="1" max="100" step="1" inputmode="numeric" value="10" aria-label="Number of tf questions"></label><label class="iq-ai-switch"><input type="checkbox" data-ai-enabled><span></span><em class="sr-only">Enable True False</em></label></div>
+                        <div class="iq-ai-type" data-ai-type="fill" data-count="10"><button type="button" class="iq-ai-drag" aria-label="Drag Gap Filling category" title="Drag to reorder">⠿</button><div class="iq-ai-type__name"><strong>Gap Fill</strong></div><label class="iq-ai-count"><input type="number" data-ai-count min="1" max="100" step="1" inputmode="numeric" value="10" aria-label="Number of fill questions"></label><label class="iq-ai-switch"><input type="checkbox" data-ai-enabled checked><span></span><em class="sr-only">Enable Gap Filling</em></label></div>
+                        <div class="iq-ai-type" data-ai-type="short" data-count="10"><button type="button" class="iq-ai-drag" aria-label="Drag Short Answer category" title="Drag to reorder">⠿</button><div class="iq-ai-type__name"><strong>Short Answer</strong></div><label class="iq-ai-count"><input type="number" data-ai-count min="1" max="100" step="1" inputmode="numeric" value="10" aria-label="Number of short questions"></label><label class="iq-ai-switch"><input type="checkbox" data-ai-enabled><span></span><em class="sr-only">Enable Short Answer</em></label></div>
+                        <div class="iq-ai-type" data-ai-type="desc" data-count="5"><button type="button" class="iq-ai-drag" aria-label="Drag Descriptive Essay category" title="Drag to reorder">⠿</button><div class="iq-ai-type__name"><strong>Essay</strong></div><label class="iq-ai-count"><input type="number" data-ai-count min="1" max="100" step="1" inputmode="numeric" value="5" aria-label="Number of desc questions"></label><label class="iq-ai-switch"><input type="checkbox" data-ai-enabled checked><span></span><em class="sr-only">Enable Descriptive Essay</em></label></div>
+                        <div class="iq-ai-type" data-ai-type="creative" data-count="3"><button type="button" class="iq-ai-drag" aria-label="Drag Creative Questions category" title="Drag to reorder">⠿</button><div class="iq-ai-type__name"><strong>Creative</strong></div><label class="iq-ai-count"><input type="number" data-ai-count min="1" max="100" step="1" inputmode="numeric" value="3" aria-label="Number of creative questions"></label><label class="iq-ai-switch"><input type="checkbox" data-ai-enabled><span></span><em class="sr-only">Enable Creative Questions</em></label></div>
+                    </div>
+                    <div class="iq-ai-extra-row">
+                        <label>Difficulty<select id="iqAiDifficulty" class="field-select"><option value="mixed">Mixed</option><option value="easy">Easy</option><option value="medium">Medium</option><option value="hard">Hard</option></select></label>
+                        <label class="iq-ai-check"><input type="checkbox" id="iqAiAnswers" checked> Answers</label>
+                        <label class="iq-ai-check"><input type="checkbox" id="iqAiExplanations" checked> Explanations</label>
+                    </div>
+                </section>
+
+                <div class="ai-capture-stage" id="aiCaptureStage">
+                    <div class="ai-capture-placeholder" id="aiCapturePlaceholder">
+                        <div class="ai-capture-placeholder__icon"><i data-lucide="image-plus"></i></div>
+                        <span class="ai-capture-placeholder__title" id="aiCaptureTitle" data-i18n="ai.noFileSelected">No file selected</span>
+                        <div class="ai-capture-placeholder__actions">
+                            <button type="button" class="btn btn--secondary" id="btnAiStartCamera"><i data-lucide="camera"></i><span data-i18n="ai.capture">Capture</span></button>
+                            <button type="button" class="btn btn--secondary" id="btnAiPickFile"><i data-lucide="upload"></i><span data-i18n="ai.upload">Upload</span></button>
+                        </div>
+                        
+                    </div>
+                    <div class="ai-file-list" id="aiFileList" hidden>
+                        <div class="ai-file-list__items" id="aiFileListItems"></div>
+                        <button type="button" class="ai-file-list__add" id="btnAiAddMore"><i data-lucide="plus"></i><span data-i18n="ai.addMore">Add more</span></button>
+                    </div>
+                </div>
+
+                <div class="setting-row ai-custom-prompt-row">
+                    <span class="setting-row__label ai-custom-prompt-row__label">
+                        <i data-lucide="wand-2"></i>
+                        <span>
+                            <span data-i18n="ai.customPrompt">Topic mode</span>
+                        </span>
+                    </span>
+                    <label class="switch">
+                        <input type="checkbox" id="chkAiCustomPrompt">
+                        <span class="switch__track"><span class="switch__thumb"></span></span>
+                    </label>
+                </div>
+
+                <div class="ai-modal__field">
+                    <label for="aiPromptInput" id="aiPromptLabel" data-i18n="ai.instructionLabel">Topic / Instructions</label>
+                    <textarea id="aiPromptInput" class="ai-prompt-textarea" placeholder="Topic or instructions…"></textarea>
+                </div>
+
+                <div class="ai-modal__status" id="aiStatus"></div>
+            </div>
+            <div class="ai-modal__foot">
+                <button type="button" class="btn btn--ghost btn--full" id="btnAiCancel" data-i18n="common.cancel">Cancel</button>
+                <button type="button" class="btn btn--primary btn--full" id="btnAiGenerate"><i data-lucide="sparkles"></i> <span data-i18n="ai.generateMcqs">Generate</span></button>
+            </div>
+        </div>
+    </div>
+
+    </body>
+</html>
